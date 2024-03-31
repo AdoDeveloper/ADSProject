@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LdOL1hLAr1heL5HL14vOfI6erueeRj78SUSuGs2bKu0PKdTYBYJSK4c4FLieYKX23HPTTYBjUI+k5Bnwi0heHw==",
+  "dgSpecHash": "5UFrE7+3YZZS3QWwjA2K8+Lnpc9hnghyvgK7Y5mEJmSQN7I4pEFE/1hFaWIXeBz+1BPIoAUqAMcMeXzYFqBLLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ernes\\Desktop\\CICLO 01-2024\\ANALISIS DE SISTEMAS\\LABORATORIO\\ADSProject\\ADSProject\\ADSProject.csproj",
+  "projectFilePath": "C:\\Users\\ernes\\Desktop\\CICLO 01-2024\\ANALISIS DE SISTEMAS\\LABORATORIO\\ADSProject\\ADSProject\\ADSProject\\ADSProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ernes\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\ernes\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
