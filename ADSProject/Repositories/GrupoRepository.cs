@@ -6,36 +6,40 @@ using System.Linq;
 
 namespace ADSProject.Repositories
 {
-    public class ProfesorRepository : IProfesor
+    public class GrupoRepository : IGrupo
     {
-        private List<Profesor> lstProfesores = new List<Profesor>
+        private List<Grupo> lstGrupos = new List<Grupo>
         {
-            new Profesor
+            new Grupo
             {
+                IdGrupo = 1,
+                IdCarrera = 1,
+                IdMateria = 1,
                 IdProfesor = 1,
-                NombresProfesor = "Juan",
-                ApellidosProfesor = "Pérez",
-                Email = "juan.perez@example.com"
+                Ciclo = 1,
+                Anio = 2023
             },
-            new Profesor
+            new Grupo
             {
+                IdGrupo = 2,
+                IdCarrera = 2,
+                IdMateria = 2,
                 IdProfesor = 2,
-                NombresProfesor = "María",
-                ApellidosProfesor = "García",
-                Email = "maria.garcia@example.com"
+                Ciclo = 2,
+                Anio = 2023
             }
         };
 
-        public int ActualizarProfesor(int idProfesor, Profesor profesor)
+        public int ActualizarGrupo(int idGrupo, Grupo grupo)
         {
             try
             {
-                int indice = lstProfesores.FindIndex(tmp => tmp.IdProfesor == idProfesor);
+                int indice = lstGrupos.FindIndex(tmp => tmp.IdGrupo == idGrupo);
                 if (indice != -1)
                 {
-                    profesor.IdProfesor = idProfesor; // Mantener el ID original
-                    lstProfesores[indice] = profesor;
-                    return idProfesor;
+                    grupo.IdGrupo = idGrupo; // Mantener el ID original
+                    lstGrupos[indice] = grupo;
+                    return idGrupo;
                 }
                 else
                 {
@@ -48,18 +52,17 @@ namespace ADSProject.Repositories
             }
         }
 
-        public int AgregarProfesor(Profesor profesor)
+        public int AgregarGrupo(Grupo grupo)
         {
             try
             {
-                if (lstProfesores.Count > 0)
+                if (lstGrupos.Count > 0)
                 {
-                    profesor.IdProfesor = lstProfesores.Last().IdProfesor + 1;
+                    grupo.IdGrupo = lstGrupos.Last().IdGrupo + 1;
                 }
 
-                lstProfesores.Add(profesor);
-
-                return profesor.IdProfesor;
+                lstGrupos.Add(grupo);
+                return grupo.IdGrupo;
             }
             catch
             {
@@ -67,14 +70,15 @@ namespace ADSProject.Repositories
             }
         }
 
-        public bool EliminarProfesor(int idProfesor)
+        public bool EliminarGrupo(int idGrupo)
         {
             try
             {
-                int indice = lstProfesores.FindIndex(tmp => tmp.IdProfesor == idProfesor);
+
+                int indice = lstGrupos.FindIndex(tmp => tmp.IdGrupo == idGrupo);
                 if (indice != -1)
                 {
-                    lstProfesores.RemoveAt(indice);
+                    lstGrupos.RemoveAt(indice);
                     return true;
                 }
                 else
@@ -88,12 +92,13 @@ namespace ADSProject.Repositories
             }
         }
 
-        public Profesor ObtenerProfesorPorID(int idProfesor)
+        public Grupo ObtenerGrupoPorID(int idGrupo)
         {
             try
             {
-                Profesor profesor = lstProfesores.FirstOrDefault(tmp => tmp.IdProfesor == idProfesor);
-                return profesor;
+                // Buscamos y asignamos el objeto grupo
+                Grupo grupo = lstGrupos.FirstOrDefault(tmp => tmp.IdGrupo == idGrupo);
+                return grupo;
             }
             catch
             {
@@ -101,11 +106,11 @@ namespace ADSProject.Repositories
             }
         }
 
-        public List<Profesor> ObtenerTodosLosProfesores()
+        public List<Grupo> ObtenerTodosLosGrupos()
         {
             try
             {
-                return lstProfesores;
+                return lstGrupos;
             }
             catch
             {
