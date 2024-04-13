@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace ADSProject.Controllers
 {
+    [ApiController]
     [Route("api/grupos/")]
     public class GruposController : ControllerBase
     {
@@ -21,15 +22,11 @@ namespace ADSProject.Controllers
         }
 
         [HttpPost("agregarGrupo")]
-        public ActionResult<string> AgregarGrupo([FromBody] Grupo grupo)
+        public ActionResult<string> AgregarGrupo(Grupo grupo)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
+               
                 int idGrupo = this.grupo.AgregarGrupo(grupo);
                 if (idGrupo > 0)
                 {
@@ -52,14 +49,11 @@ namespace ADSProject.Controllers
         }
 
         [HttpPut("actualizarGrupo/{idGrupo}")]
-        public ActionResult<string> ActualizarGrupo(int idGrupo, [FromBody] Grupo grupo)
+        public ActionResult<string> ActualizarGrupo(int idGrupo, Grupo grupo)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+               
 
                 int contador = this.grupo.ActualizarGrupo(idGrupo, grupo);
 

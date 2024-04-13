@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ADSProject.Validations;
 
 namespace ADSProject.Models
 {
     public class Grupo
     {
         public int IdGrupo { get; set; }
-        [Required(ErrorMessage = "Este es un campo requerido")]
+        [CustomRequired(ErrorMessage = "Este es un campo requerido y debe ser mayor a 0")]
         public int IdCarrera { get; set; }
         [Required(ErrorMessage = "Este es un campo requerido")]
         public int IdMateria { get; set; }
