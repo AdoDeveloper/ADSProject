@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ADSProject.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace ADSProject.Models
 {
+    [PrimaryKey(nameof(IdCarrera))]
     public class Carrera
     {
         public int IdCarrera { get; set; }

@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ADSProject.Validations;
+using Microsoft.EntityFrameworkCore;
 
 namespace ADSProject.Models
 {
+    [PrimaryKey(nameof(IdGrupo))]
     public class Grupo
     {
         public int IdGrupo { get; set; }
