@@ -26,6 +26,11 @@ namespace ADSProject.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
                 int idMateria = this.materia.AgregarMateria(nuevaMateria);
                 pCodRespuesta = COD_EXITO;
                 pMensajeUsuario = "Materia agregada correctamente";
@@ -46,6 +51,11 @@ namespace ADSProject.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
                 int contador = this.materia.ActualizarMateria(idMateria, materiaActualizada);
                 if (contador > 0)
                 {
