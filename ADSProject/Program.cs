@@ -22,14 +22,21 @@ builder.Services.AddSingleton<IMateria, MateriaRepository>();
 builder.Services.AddSingleton<IProfesor, ProfesorRepository>();
 builder.Services.AddSingleton<IGrupo, GrupoRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(configuration =>
+    {
+        configuration.WithOrigins(builder.Configuration["allowedOrigins"]!).AllowAnyMethod().AllowAnyHeader();
+    });
+});
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 
 app.UseAuthorization();
 
